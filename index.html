@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shelzy's Designs | Personalized Water Bottles</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+      <style>
+                * {
+                              margin: 0;
+                              padding: 0;
+                              box-sizing: border-box;
+                }
+
+                :root {
+                              --primary: #2c1810;
+                              --accent: #c9a87c;
+                              --light: #faf8f5;
+                              --text: #333;
+                              --text-light: #666;
+                }
+
+                body {
+                              font-family: 'Inter', sans-serif;
+                              color: var(--text);
+                              line-height: 1.6;
+                }
+
+                /* Announcement Bar */
+                .announcement-bar {
+                              background: var(--primary);
+                              color: white;
+                              text-align: center;
+                              padding: 12px 20px;
+                              font-size: 14px;
+                              letter-spacing: 0.5px;
+                }
+
+                .announcement-bar span {
+                              color: var(--accent);
+                              font-weight: 600;
+                }
+
+                /* Header */
+                header {
+                              background: white;
+                              padding: 20px 60px;
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              position: sticky;
+                              top: 0;
+                              z-index: 100;
+                              box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+                }
+
+                .logo {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 28px;
+                              font-weight: 600;
+                              color: var(--primary);
+                              text-decoration: none;
+                }
+
+                nav {
+                              display: flex;
+                              gap: 40px;
+                }
+
+                nav a {
+                              text-decoration: none;
+                              color: var(--text);
+                              font-weight: 500;
+                              font-size: 15px;
+                              transition: color 0.3s;
+                }
+
+                nav a:hover {
+                              color: var(--accent);
+                }
+
+                /* Hero Section */
+                .hero {
+                              background: linear-gradient(135deg, #faf8f5 0%, #f0ebe3 100%);
+                              padding: 100px 60px;
+                              display: grid;
+                              grid-template-columns: 1fr 1fr;
+                              gap: 60px;
+                              align-items: center;
+                              min-height: 80vh;
+                }
+
+                .hero-content h1 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 56px;
+                              line-height: 1.1;
+                              color: var(--primary);
+                              margin-bottom: 24px;
+                }
+
+                .hero-content p {
+                              font-size: 18px;
+                              color: var(--text-light);
+                              margin-bottom: 32px;
+                              max-width: 480px;
+                }
+
+                .hero-features {
+                              display: flex;
+                              gap: 30px;
+                              margin-bottom: 40px;
+                }
+
+                .hero-feature {
+                              display: flex;
+                              align-items: center;
+                              gap: 10px;
+                              font-size: 14px;
+                              color: var(--text-light);
+                }
+
+                .hero-feature svg {
+                              width: 20px;
+                              height: 20px;
+                              color: var(--accent);
+                }
+
+                .btn {
+                              display: inline-block;
+                              background: var(--primary);
+                              color: white;
+                              padding: 16px 40px;
+                              text-decoration: none;
+                              font-weight: 600;
+                              font-size: 15px;
+                              letter-spacing: 1px;
+                              text-transform: uppercase;
+                              transition: all 0.3s;
+                              border: none;
+                              cursor: pointer;
+                }
+
+                .btn:hover {
+                              background: #3d251a;
+                              transform: translateY(-2px);
+                              box-shadow: 0 10px 30px rgba(44, 24, 16, 0.2);
+                }
+
+                .btn-outline {
+                              background: transparent;
+                              border: 2px solid var(--primary);
+                              color: var(--primary);
+                }
+
+                .btn-outline:hover {
+                              background: var(--primary);
+                              color: white;
+                }
+
+                .hero-image {
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                }
+
+                .hero-image img {
+                              max-width: 100%;
+                              height: auto;
+                }
+
+                .bottle-display {
+                              display: flex;
+                              gap: 20px;
+                              justify-content: center;
+                }
+
+                .bottle-card {
+                              background: white;
+                              padding: 30px;
+                              border-radius: 20px;
+                              box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+                              text-align: center;
+                }
+
+                .bottle-emoji {
+                              font-size: 80px;
+                              margin-bottom: 15px;
+                }
+
+                .bottle-name {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 24px;
+                              color: var(--primary);
+                }
+
+                /* Features Strip */
+                .features-strip {
+                              background: var(--primary);
+                              padding: 40px 60px;
+                              display: grid;
+                              grid-template-columns: repeat(4, 1fr);
+                              gap: 30px;
+                }
+
+                .feature-item {
+                              text-align: center;
+                              color: white;
+                }
+
+                .feature-item svg {
+                              width: 40px;
+                              height: 40px;
+                              margin-bottom: 15px;
+                              color: var(--accent);
+                }
+
+                .feature-item h4 {
+                              font-size: 14px;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                              margin-bottom: 8px;
+                }
+
+                .feature-item p {
+                              font-size: 13px;
+                              opacity: 0.8;
+                }
+
+                /* Products Section */
+                .products {
+                              padding: 100px 60px;
+                              background: white;
+                }
+
+                .section-header {
+                              text-align: center;
+                              margin-bottom: 60px;
+                }
+
+                .section-header span {
+                              color: var(--accent);
+                              font-size: 14px;
+                              text-transform: uppercase;
+                              letter-spacing: 2px;
+                              font-weight: 600;
+                }
+
+                .section-header h2 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 42px;
+                              color: var(--primary);
+                              margin-top: 10px;
+                }
+
+                .products-grid {
+                              display: grid;
+                              grid-template-columns: repeat(3, 1fr);
+                              gap: 40px;
+                              max-width: 1200px;
+                              margin: 0 auto;
+                }
+
+                .product-card {
+                              background: var(--light);
+                              border-radius: 20px;
+                              overflow: hidden;
+                              transition: all 0.3s;
+                }
+
+                .product-card:hover {
+                              transform: translateY(-10px);
+                              box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+                }
+
+                .product-image {
+                              background: linear-gradient(135deg, #f5f0e8 0%, #ebe4d8 100%);
+                              height: 320px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              position: relative;
+                              overflow: hidden;
+                }
+
+                .product-image .emoji {
+                              font-size: 120px;
+                              transition: transform 0.3s;
+                }
+
+                .product-card:hover .emoji {
+                              transform: scale(1.1);
+                }
+
+                .sale-badge {
+                              position: absolute;
+                              top: 20px;
+                              left: 20px;
+                              background: #c75050;
+                              color: white;
+                              padding: 6px 14px;
+                              font-size: 12px;
+                              font-weight: 600;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                              border-radius: 4px;
+                }
+
+                .product-info {
+                              padding: 30px;
+                }
+
+                .product-info h3 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 22px;
+                              color: var(--primary);
+                              margin-bottom: 8px;
+                }
+
+                .product-info .description {
+                              color: var(--text-light);
+                              font-size: 14px;
+                              margin-bottom: 16px;
+                }
+
+                .product-pricing {
+                              display: flex;
+                              align-items: center;
+                              gap: 12px;
+                              margin-bottom: 20px;
+                }
+
+                .current-price {
+                              font-size: 24px;
+                              font-weight: 700;
+                              color: var(--primary);
+                }
+
+                .original-price {
+                              font-size: 16px;
+                              color: #999;
+                              text-decoration: line-through;
+                }
+
+                .savings {
+                              font-size: 13px;
+                              color: #c75050;
+                              font-weight: 600;
+                }
+
+                .product-btn {
+                              width: 100%;
+                              padding: 14px 20px;
+                              font-size: 13px;
+                }
+
+                /* Why Choose Section */
+                .why-choose {
+                              background: var(--light);
+                              padding: 100px 60px;
+                }
+
+                .why-grid {
+                              display: grid;
+                              grid-template-columns: repeat(3, 1fr);
+                              gap: 50px;
+                              max-width: 1100px;
+                              margin: 0 auto;
+                }
+
+                .why-item {
+                              text-align: center;
+                              padding: 40px 30px;
+                              background: white;
+                              border-radius: 16px;
+                              transition: all 0.3s;
+                }
+
+                .why-item:hover {
+                              box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+                }
+
+                .why-icon {
+                              width: 70px;
+                              height: 70px;
+                              background: linear-gradient(135deg, var(--accent), #d4b896);
+                              border-radius: 50%;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              margin: 0 auto 24px;
+                              font-size: 28px;
+                }
+
+                .why-item h3 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 20px;
+                              color: var(--primary);
+                              margin-bottom: 12px;
+                }
+
+                .why-item p {
+                              color: var(--text-light);
+                              font-size: 15px;
+                }
+
+                /* Testimonials */
+                .testimonials {
+                              padding: 100px 60px;
+                              background: white;
+                }
+
+                .testimonial-grid {
+                              display: grid;
+                              grid-template-columns: repeat(3, 1fr);
+                              gap: 30px;
+                              max-width: 1100px;
+                              margin: 0 auto;
+                }
+
+                .testimonial-card {
+                              background: var(--light);
+                              padding: 35px;
+                              border-radius: 16px;
+                }
+
+                .stars {
+                              color: #f4c150;
+                              font-size: 18px;
+                              margin-bottom: 16px;
+                }
+
+                .testimonial-card p {
+                              color: var(--text);
+                              font-style: italic;
+                              margin-bottom: 20px;
+                              font-size: 15px;
+                }
+
+                .testimonial-author {
+                              font-weight: 600;
+                              color: var(--primary);
+                }
+
+                /* CTA Section */
+                .cta {
+                              background: linear-gradient(135deg, var(--primary) 0%, #3d251a 100%);
+                              padding: 80px 60px;
+                              text-align: center;
+                }
+
+                .cta h2 {
+                              font-family: 'Playfair Display', serif;
+                              font-size: 40px;
+                              color: white;
+                              margin-bottom: 16px;
+                }
+
+                .cta p {
+                              color: rgba(255,255,255,0.8);
+                              font-size: 18px;
+                              margin-bottom: 32px;
+                }
+
+                .cta .btn {
+                              background: var(--accent);
+                              color: var(--primary);
+                }
+
+                .cta .btn:hover {
+                              background: #d4b896;
+                }
+
+                /* Footer */
+                footer {
+                              background: #1a0f0a;
+                              color: white;
+                              padding: 60px;
+                }
+
+                .footer-content {
+                              display: grid;
+                              grid-template-columns: 2fr 1fr 1fr 1fr;
+                              gap: 60px;
+                              max-width: 1200px;
+                              margin: 0 auto;
+                }
+
+                .footer-brand .logo {
+                              color: white;
+                              margin-bottom: 20px;
+                              display: block;
+                }
+
+                .footer-brand p {
+                              color: rgba(255,255,255,0.7);
+                              font-size: 14px;
+                              line-height: 1.8;
+                }
+
+                .footer-links h4 {
+                              font-size: 14px;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                              margin-bottom: 20px;
+                              color: var(--accent);
+                }
+
+                .footer-links ul {
+                              list-style: none;
+                }
+
+                .footer-links li {
+                              margin-bottom: 12px;
+                }
+
+                .footer-links a {
+                              color: rgba(255,255,255,0.7);
+                              text-decoration: none;
+                              font-size: 14px;
+                              transition: color 0.3s;
+                }
+
+                .footer-links a:hover {
+                              color: var(--accent);
+                }
+
+                .footer-bottom {
+                              border-top: 1px solid rgba(255,255,255,0.1);
+                              margin-top: 50px;
+                              padding-top: 30px;
+                              text-align: center;
+                              color: rgba(255,255,255,0.5);
+                              font-size: 13px;
+                }
+
+                .payment-icons {
+                              display: flex;
+                              gap: 10px;
+                              justify-content: center;
+                              margin-top: 15px;
+                }
+
+                .payment-icons span {
+                              background: rgba(255,255,255,0.1);
+                              padding: 8px 12px;
+                              border-radius: 4px;
+                              font-size: 12px;
+                }
+
+                /* Responsive */
+                @media (max-width: 1024px) {
+                              .hero {
+                                                grid-template-columns: 1fr;
+                                                text-align: center;
+                                                padding: 60px 30px;
+                              }
+
+                              .hero-content h1 {
+                                                font-size: 40px;
+                              }
+
+                              .hero-features {
+                                                justify-content: center;
+                              }
+
+                              .products-grid,
+                              .why-grid,
+                              .testimonial-grid {
+                                                grid-template-columns: 1fr;
+                              }
+
+                              .features-strip {
+                                                grid-template-columns: repeat(2, 1fr);
+                              }
+
+                              .footer-content {
+                                                grid-template-columns: 1fr 1fr;
+                              }
+
+                              header {
+                                                padding: 15px 20px;
+                              }
+
+                              nav {
+                                                gap: 20px;
+                              }
+                }
+
+                @media (max-width: 600px) {
+                              .features-strip {
+                                                grid-template-columns: 1fr;
+                              }
+
+                              .footer-content {
+                                                grid-template-columns: 1fr;
+                              }
+
+                              header {
+                                                flex-direction: column;
+                                                gap: 15px;
+                              }
+                }
+            </style>
+  </head>
+  <body>
+        <!-- Announcement Bar -->
+        <div class="announcement-bar">
+                  <span>FREE SHIPPING</span> on orders over $50 · Personalized bottles ship in 3-5 business days
+        </div>div>
+  
+      <!-- Header -->
+      <header>
+                <a href="#" class="logo">Shelzy's Designs</a>a>
+                <nav>
+                              <a href="#products">Shop</a>a>
+                              <a href="#why">About</a>a>
+                              <a href="#faq">FAQ</a>a>
+                              <a href="#contact">Contact</a>a>
+                </nav>
+      </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+                  <div class="hero-content">
+                                <h1>Your Name.<br>Your Style.<br>Your Bottle.</h1>
+                              <p>Premium personalized water bottles with permanent sublimation printing. No peeling, no fading—just a bottle that's unmistakably yours.</p>
+                              <div class="hero-features">
+                                              <div class="hero-feature">
+                                                                  <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>path></svg>svg>
+                                                                  Cold 24hrs / Hot 12hrs
+                                              </div>div>
+                                              <div class="hero-feature">
+                                                                  <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>path></svg>svg>
+                                                                  Dishwasher Safe
+                                              </div>div>
+                                              <div class="hero-feature">
+                                                                  <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>path></svg>svg>
+                                                                  Damage Guarantee
+                                              </div>div>
+                              </div>div>
+                              <a href="#products" class="btn">Shop Now</a>a>
+                  </div>div>
+                <div class="hero-image">
+                            <div class="bottle-display">
+                                            <div class="bottle-card">
+                                                                <div class="bottle-emoji">🍶</div>div>
+                                                                <div class="bottle-name">Charlotte</div>div>
+                                            </div>div>
+                                            <div class="bottle-card">
+                                                                <div class="bottle-emoji">🧴</div>div>
+                                                                <div class="bottle-name">Hudson</div>div>
+                                            </div>div>
+                            </div>div>
+                </div>div>
+        </section>section>
+  
+      <!-- Features Strip -->
+      <div class="features-strip">
+              <div class="feature-item">
+                          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5z"></path>path></svg>svg>
+                          <h4>Made to Order</h4>
+                          <p>Each bottle is created just for you</p>
+              </div>div>
+              <div class="feature-item">
+                          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>path><path d="M3 4h1l1.68 8.39A3 3 0 008.62 15h4.76a3 3 0 002.94-2.61L17 6H6"></path>path></svg>svg>
+                          <h4>Free Shipping</h4>
+                          <p>On all orders over $50</p>
+              </div>div>
+              <div class="feature-item">
+                          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>path></svg>svg>
+                          <h4>Damage Guarantee</h4>
+                          <p>We replace damaged arrivals free</p>
+              </div>div>
+              <div class="feature-item">
+                          <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V6h2v4z"></path>path></svg>svg>
+                          <h4>30-Day Returns</h4>
+                          <p>Easy returns on all orders</p>
+              </div>div>
+      </div>div>
+  
+      <!-- Products Section -->
+      <section class="products" id="products">
+              <div class="section-header">
+                          <span>Our Collection</span>
+                          <h2>Best Sellers</h2>
+              </div>div>
+              <div class="products-grid">
+                          <!-- Product 1 -->
+                          <div class="product-card">
+                                          <div class="product-image">
+                                                              <span class="sale-badge">Sale</span>
+                                                              <span class="emoji">🍶</span>
+                                          </div>div>
+                                          <div class="product-info">
+                                                              <h3>Insulated Water Bottle with Lids</h3>
+                                                              <p class="description">17oz stainless steel, double-wall insulation. Perfect for everyday hydration.</p>
+                                                              <div class="product-pricing">
+                                                                                      <span class="current-price">$24.99</span>
+                                                                                      <span class="original-price">$34.99</span>
+                                                                                      <span class="savings">Save $10</span>
+                                                              </div>div>
+                                                              <button class="btn product-btn">Add to Cart</button>button>
+                                          </div>div>
+                          </div>div>
+              
+                          <!-- Product 2 -->
+                          <div class="product-card">
+                                          <div class="product-image">
+                                                              <span class="sale-badge">Sale</span>
+                                                              <span class="emoji">🧴</span>
+                                          </div>div>
+                                          <div class="product-info">
+                                                              <h3>Personalized Clear Water Bottle</h3>
+                                                              <p class="description">24oz BPA-free clear bottle. See your hydration progress throughout the day.</p>
+                                                              <div class="product-pricing">
+                                                                                      <span class="current-price">$19.99</span>
+                                                                                      <span class="original-price">$29.99</span>
+                                                                                      <span class="savings">Save $10</span>
+                                                              </div>div>
+                                                              <button class="btn product-btn">Add to Cart</button>button>
+                                          </div>div>
+                          </div>div>
+              
+                          <!-- Product 3 -->
+                          <div class="product-card">
+                                          <div class="product-image">
+                                                              <span class="sale-badge">Sale</span>
+                                                              <span class="emoji">🥤</span>
+                                          </div>div>
+                                          <div class="product-info">
+                                                              <h3>Kids Tumblers</h3>
+                                                              <p class="description">12oz stainless steel tumbler with fun colors. Perfect for school and sports.</p>
+                                                              <div class="product-pricing">
+                                                                                      <span class="current-price">$24.00</span>
+                                                                                      <span class="original-price">$30.00</span>
+                                                                                      <span class="savings">Save $6</span>
+                                                              </div>div>
+                                                              <button class="btn product-btn">Add to Cart</button>button>
+                                          </div>div>
+                          </div>div>
+              </div>div>
+      </section>section>
+  
+      <!-- Why Choose Section -->
+      <section class="why-choose" id="why">
+              <div class="section-header">
+                          <span>Why Shelzy's?</span>
+                          <h2>The Difference is in the Details</h2>
+              </div>div>
+              <div class="why-grid">
+                          <div class="why-item">
+                                          <div class="why-icon">🎨</div>div>
+                                          <h3>Fully Customizable</h3>
+                                          <p>Choose your name, font, and color. We print exactly what you enter for a truly personal touch.</p>
+                          </div>div>
+                          <div class="why-item">
+                                          <div class="why-icon">✨</div>div>
+                                          <h3>Permanent Printing</h3>
+                                          <p>Our sublimation process bonds the design into the bottle—no peeling stickers or fading vinyl.</p>
+                          </div>div>
+                          <div class="why-item">
+                                          <div class="why-icon">❄️</div>div>
+                                          <h3>Superior Insulation</h3>
+                                          <p>Double-wall vacuum insulation keeps drinks cold for 24 hours and hot for 12 hours.</p>
+                          </div>div>
+              </div>div>
+      </section>section>
+  
+      <!-- Testimonials -->
+      <section class="testimonials">
+              <div class="section-header">
+                          <span>Reviews</span>
+                          <h2>What Our Customers Say</h2>
+              </div>div>
+              <div class="testimonial-grid">
+                          <div class="testimonial-card">
+                                          <div class="stars">★★★★★</div>div>
+                                          <p>"Ordered bottles for my entire bridal party. The quality is amazing and everyone loved them!"</p>
+                                          <span class="testimonial-author">— Sarah M.</span>
+                          </div>div>
+                          <div class="testimonial-card">
+                                          <div class="stars">★★★★★</div>div>
+                                          <p>"My daughter won't use any other water bottle now. The personalization makes it special."</p>
+                                          <span class="testimonial-author">— Jennifer K.</span>
+                          </div>div>
+                          <div class="testimonial-card">
+                                          <div class="stars">★★★★★</div>div>
+                                          <p>"Perfect for our corporate event. Great bulk pricing and fast turnaround!"</p>
+                                          <span class="testimonial-author">— Michael R.</span>
+                          </div>div>
+              </div>div>
+      </section>section>
+  
+      <!-- CTA Section -->
+      <section class="cta" id="faq">
+              <h2>Ready to Make It Yours?</h2>
+              <p>Create a personalized water bottle that's unmistakably you.</p>
+              <a href="#products" class="btn">Start Customizing</a>a>
+      </section>section>
+  
+      <!-- Footer -->
+      <footer id="contact">
+              <div class="footer-content">
+                          <div class="footer-brand">
+                                          <a href="#" class="logo">Shelzy's Designs</a>a>
+                                          <p>Premium personalized water bottles with permanent sublimation printing. Made to order, just for you.</p>
+                          </div>div>
+                          <div class="footer-links">
+                                          <h4>Shop</h4>
+                                          <ul>
+                                                                <li><a href="#">All Products</a>a></li>
+                                                              <li><a href="#">Kids Bottles</a>a></li>
+                                                              <li><a href="#">Bridal Collection</a>a></li>
+                                                              <li><a href="#">Corporate Orders</a>a></li>
+                                          </ul>
+                          </div>div>
+                          <div class="footer-links">
+                                          <h4>Support</h4>
+                                          <ul>
+                                                              <li><a href="#">FAQ</a>a></li>
+                                                              <li><a href="#">Shipping Info</a>a></li>
+                                                              <li><a href="#">Returns</a>a></li>
+                                                              <li><a href="#">Contact Us</a>a></li>
+                                          </ul>
+                          </div>div>
+                          <div class="footer-links">
+                                          <h4>Contact</h4>
+                                          <ul>
+                                                              <li><a href="mailto:hello@shelzysdesigns.com">hello@shelzysdesigns.com</a>a></li>
+                                                              <li><a href="#">Instagram</a>a></li>
+                                                              <li><a href="#">Facebook</a>a></li>
+                                          </ul>
+                          </div>div>
+              </div>div>
+              <div class="footer-bottom">
+                          <p>© 2026 Shelzy's Designs. All rights reserved.</p>
+                          <div class="payment-icons">
+                                          <span>Visa</span>
+                                          <span>Mastercard</span>
+                                          <span>PayPal</span>
+                                          <span>Apple Pay</span>
+                                          <span>Shop Pay</span>
+                          </div>div>
+              </div>div>
+      </footer>footer>
+  </body>
+</html>html></p></li></li>
+                                          </ul></p></p></h1>
+                </nav>
+      </header></span>
+  </body>
+      </style></title>
+  </head>
